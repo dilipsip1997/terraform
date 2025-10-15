@@ -1,0 +1,72 @@
+
+---
+
+## 🔧 Step-by-Step Setup
+
+### 1️⃣ GitHub Codespaces
+- Add `.devcontainer/devcontainer.json` to enable Terraform, AWS CLI, Docker.
+- Launch Codespace from GitHub → Code → Codespaces → Create.
+
+### 2️⃣ Infrastructure Provisioning
+Use Terraform to provision:
+- VPC with public/private subnets, NAT, IGW
+- EC2 instance for Jenkins
+- S3 bucket for logs/artifacts/state
+- ECR for Docker images
+- ECS or EKS for deployment
+- IAM roles with least privilege
+
+### 3️⃣ Jenkins Setup
+- Install Jenkins on EC2 via `user_data`
+- Add plugins: GitHub, Docker, ECR, ECS/EKS
+- Configure pipeline jobs
+
+### 4️⃣ CI/CD Pipeline Flow
+- GitHub → Jenkins → Docker build → ECR push → ECS/EKS deploy
+- Optionally use GitHub Actions for Terraform automation
+
+### 5️⃣ Frontend + Backend Deployment
+- Containerize both apps
+- Use Helm or kubectl for EKS
+- Use ECS task definitions for ECS
+
+### 6️⃣ Security & Compliance
+- Encrypt S3 with KMS
+- Use IAM roles for Jenkins, ECS/EKS
+- Enable CloudTrail, GuardDuty
+
+### 7️⃣ Monitoring & Logging
+- CloudWatch for logs
+- Prometheus + Grafana for metrics
+- Alerts via CloudWatch or Grafana
+
+---
+
+## 📦 Deployment Targets
+
+You can choose between:
+- **Amazon ECS**: Simpler, native AWS container service
+- **Amazon EKS**: Kubernetes-native, more flexible for microservices
+
+---
+
+## 📌 Notes
+
+- Store Terraform state in encrypted S3 with DynamoDB locking.
+- Use GitHub Actions for automated `terraform plan` and `apply`.
+- Use Jenkins for Docker build and deployment stages.
+
+---
+
+## 🧪 To Do
+
+- [ ] Add Helm charts for frontend/backend
+- [ ] Configure Route53 for DNS failover
+- [ ] Add Terraform Sentinel policies (if using Terraform Cloud)
+- [ ] Setup lifecycle policies for EBS snapshots
+
+---
+
+## 📄 License
+
+MIT © 2025 Your Name
