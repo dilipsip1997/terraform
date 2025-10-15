@@ -1,0 +1,26 @@
+# 🚀 Full CI/CD Pipeline Project with AWS, GitHub Codespaces, Terraform & Jenkins
+
+This project automates the deployment of a full-stack CI/CD pipeline using AWS infrastructure, GitHub Codespaces for development, Terraform for infrastructure-as-code, Jenkins for orchestration, and ECS/EKS for container deployment.
+
+---
+
+## 🧰 Tools & Services Used
+
+| Purpose              | Tool/Service         |
+|----------------------|----------------------|
+| Code Repository      | GitHub               |
+| Dev Environment      | GitHub Codespaces    |
+| IaC (Infra as Code)  | Terraform            |
+| CI/CD Orchestration  | Jenkins + GitHub Actions |
+| Cloud Provider       | AWS                  |
+| Container Registry   | Amazon ECR           |
+| Compute (Containers) | Amazon ECS or EKS    |
+| VM for Jenkins       | Amazon EC2           |
+| Networking           | Amazon VPC           |
+| Storage              | Amazon S3            |
+| Monitoring           | CloudWatch + Grafana |
+| Secrets Management   | AWS KMS + IAM Roles  |
+
+---
+
+## 🧭 Project Structure
