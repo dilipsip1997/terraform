@@ -3,5 +3,5 @@ region "us-east-1"
 }
 resources "aws_instance" "instacename" {
 ami = "ami_id"
-instance_type  ="t2.micro"
+instance_type  = var.instance_type
 }
